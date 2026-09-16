@@ -1,0 +1,38 @@
+# ═══════════════════════════════════════════════════════════════════════
+#  Render Blueprint — deploys ONLY the Meridian Admin Panel
+#
+#  HOW TO USE
+#    Render Dashboard ▸ New ▸ Blueprint ▸ pick this repository ▸ Apply
+#    Render reads this file, creates the web service and deploys it.
+#
+#  WHAT IT SERVES
+#    admin.html · css/styles.css · css/admin.css
+#    js/api.js · js/data.js · js/charts.js · js/ui.js · js/admin.js
+#
+#  NOT SERVED (by design — this is an admin-only deployment)
+#    index.html (faculty portal) · student.html (student portal)
+#    js/student.js · js/pages-a…d.js
+# ═══════════════════════════════════════════════════════════════════════
+
+services:
+  - type: web
+    name: meridian-admin
+    runtime: python
+    plan: free
+    region: singapore          # oregon | ohio | virginia | frankfurt | singapore
+    buildCommand: echo "stdlib only - no dependencies to install"
+    startCommand: python admin_server.py
+    healthCheckPath: /healthz
+    autoDeploy: true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      # ─ Optional access protection ───────────────────────────────────
+      # Fill these in on the Blueprint form (or later in the dashboard:
+      # Environment ▸ Add Environment Variable) to put HTTP Basic Auth in
+      # front of the panel. Leave them empty to publish it without a
+      # password — not recommended for a public URL.
+      - key: ADMIN_USER
+        sync: false
+      - key: ADMIN_PASS
+        sync: false

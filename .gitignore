@@ -26,9 +26,9 @@ __pycache__/
 venv/
 
 # ── Dev / test scratch files (local only) ────────────────
-_selftest.html
-_selftest.*.txt
+_selftest*
 _runtest.ps1
+_render*
 
 # ── OS / editor ──────────────────────────────────────────
 Thumbs.db
