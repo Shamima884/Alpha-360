@@ -1,0 +1,35 @@
+{
+  "students": [
+    { "id": "STU-10231", "name": "Rahim Ahmed", "dept": "CSE", "batch": 2024, "sem": 5, "cgpa": 2.41, "att": 68, "failed": 2, "email": "rahim.ahmed@meridian.edu", "program": "B.Sc. Computer Science", "gpa": 2.18, "prevGpa": 2.52, "risk": "High", "gpaTrend": "[2.67,2.62,2.58,2.52,2.46,2.41]", "courseAtt": "{\"CSE101\":82,\"CSE205\":61,\"MAT201\":73,\"PHY101\":55}", "rank": 38, "passed": 18, "status": "Active", "last": "2h ago" },
+    { "id": "STU-10232", "name": "Ayesha Rahman", "dept": "CSE", "batch": 2024, "sem": 5, "cgpa": 3.78, "att": 94, "failed": 0, "email": "ayesha.rahman@meridian.edu", "program": "B.Sc. Computer Science", "gpa": 3.85, "prevGpa": 3.72, "risk": "Low", "gpaTrend": "[3.52,3.59,3.65,3.7,3.74,3.78]", "courseAtt": "{\"CSE101\":95,\"CSE205\":91,\"MAT201\":88,\"PHY101\":96}", "rank": 2, "passed": 26, "status": "Active", "last": "25m ago" },
+    { "id": "STU-10284", "name": "Chen Wei", "dept": "CSE", "batch": 2022, "sem": 8, "cgpa": 3.58, "att": 93, "failed": 0, "email": "chen.wei@meridian.edu", "program": "B.Sc. Computer Science", "gpa": 3.66, "prevGpa": 3.54, "risk": "Low", "gpaTrend": "[3.32,3.39,3.45,3.5,3.54,3.58]", "courseAtt": "{\"CSE101\":96,\"CSE205\":94,\"MAT201\":90,\"PHY101\":92}", "rank": 4, "passed": 30, "status": "Active", "last": "30m ago" },
+    { "id": "STU-10255", "name": "Jamal Williams", "dept": "EEE", "batch": 2022, "sem": 7, "cgpa": 2.28, "att": 58, "failed": 3, "email": "jamal.williams@meridian.edu", "program": "B.Sc. Electrical Engineering", "gpa": 2.05, "prevGpa": 2.34, "risk": "Critical", "gpaTrend": "[2.54,2.48,2.44,2.4,2.34,2.28]", "courseAtt": "{\"EEE201\":52,\"PHY101\":60,\"MAT201\":64,\"CSE101\":58}", "rank": 41, "passed": 15, "status": "Active", "last": "1d ago" },
+    { "id": "STU-10258", "name": "Fatima Al-Sayed", "dept": "BBA", "batch": 2023, "sem": 5, "cgpa": 3.51, "att": 85, "failed": 0, "email": "fatima.alsayed@meridian.edu", "program": "Bachelor of Business Administration", "gpa": 3.6, "prevGpa": 3.47, "risk": "Low", "gpaTrend": "[3.25,3.32,3.38,3.43,3.47,3.51]", "courseAtt": "{\"BUS210\":88,\"ENG105\":90,\"MAT201\":82,\"CSE101\":84}", "rank": 6, "passed": 24, "status": "Active", "last": "2h ago" },
+    { "id": "STU-10261", "name": "Kofi Mensah", "dept": "CIV", "batch": 2023, "sem": 6, "cgpa": 3.12, "att": 80, "failed": 0, "email": "kofi.mensah@meridian.edu", "program": "B.Sc. Civil Engineering", "gpa": 3.2, "prevGpa": 3.08, "risk": "Low", "gpaTrend": "[2.86,2.93,2.99,3.04,3.08,3.12]", "courseAtt": "{\"PHY101\":83,\"MAT201\":78,\"BUS210\":85,\"ENG105\":86}", "rank": 12, "passed": 22, "status": "Active", "last": "5h ago" }
+  ],
+  "users": [
+    { "id": "USR-001", "name": "Super Administrator", "role": "Admin", "dept": "ICT", "email": "admin@meridian.edu", "password": "admin123", "status": "Active", "last": "now" },
+    { "id": "USR-002", "name": "Dr. Sarah Mitchell", "role": "Professor", "dept": "CSE", "email": "s.mitchell@meridian.edu", "password": "faculty123", "status": "Active", "last": "2h ago" },
+    { "id": "USR-003", "name": "Prof. Ahmed Karim", "role": "Professor", "dept": "CSE", "email": "a.karim@meridian.edu", "password": "faculty123", "status": "Active", "last": "1d ago" },
+    { "id": "USR-004", "name": "Grace Okonkwo", "role": "Registrar", "dept": "Academic Registry", "email": "g.okonkwo@meridian.edu", "password": "registrar123", "status": "Active", "last": "40m ago" }
+  ],
+  "courses": [
+    { "code": "CSE101", "name": "Introduction to Programming", "credits": 3, "dept": "CSE", "instructor": "Dr. S. Malik", "students": 55, "avgGrade": "B+", "passRate": 92 },
+    { "code": "CSE205", "name": "Data Structures & Algorithms", "credits": 3, "dept": "CSE", "instructor": "Prof. A. Karim", "students": 48, "avgGrade": "B", "passRate": 84 },
+    { "code": "MAT201", "name": "Calculus II", "credits": 3, "dept": "CSE", "instructor": "Dr. L. Fernandes", "students": 52, "avgGrade": "C+", "passRate": 78 },
+    { "code": "PHY101", "name": "Physics I", "credits": 4, "dept": "EEE", "instructor": "Dr. H. Bauer", "students": 46, "avgGrade": "B-", "passRate": 86 },
+    { "code": "ENG105", "name": "Academic Writing", "credits": 2, "dept": "ENG", "instructor": "Ms. R. Whitfield", "students": 40, "avgGrade": "A-", "passRate": 95 },
+    { "code": "BUS210", "name": "Principles of Management", "credits": 3, "dept": "BBA", "instructor": "Dr. C. Mensah", "students": 44, "avgGrade": "B+", "passRate": 90 },
+    { "code": "EEE201", "name": "Circuit Analysis", "credits": 3, "dept": "EEE", "instructor": "Dr. N. Iqbal", "students": 44, "avgGrade": "B", "passRate": 81 }
+  ],
+  "announcements": [
+    { "id": 1, "title": "Maintenance window — Sunday 2:00–4:00 AM", "audience": "All users", "status": "Published", "date": "Mar 07, 2026", "author": "Tom Ryder" },
+    { "id": 2, "title": "Semester 5 registration opens Mar 15", "audience": "Students", "status": "Scheduled", "date": "Scheduled · Mar 15", "author": "Grace Okonkwo" }
+  ],
+  "enrollments": [
+    { "id": "STU-10401", "name": "Amina Yusuf", "program": "B.Sc. Computer Science", "batch": 2024, "sem": 5, "status": "Pending", "applied": "Mar 08" },
+    { "id": "STU-10402", "name": "Kwame Boateng", "program": "B.Sc. Civil Engineering", "batch": 2024, "sem": 5, "status": "Pending", "applied": "Mar 08" },
+    { "id": "STU-10284", "name": "Chen Wei", "program": "B.Sc. Computer Science", "batch": 2022, "sem": 8, "status": "Active", "applied": "Sep 2022" }
+  ],
+  "changelog": []
+}

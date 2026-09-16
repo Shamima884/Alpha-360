@@ -1,0 +1,102 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meridian Student Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/admin.css">
+<style>
+.student-wrap{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;background:linear-gradient(135deg,#eef2ff 0%,#f8fafc 50%,#f0fdf4 100%);}
+.student-login-card{background:#fff;border-radius:16px;padding:40px;max-width:420px;width:100%;box-shadow:0 4px 24px rgba(0,0,0,.08);}
+.student-login-card .logo{width:56px;height:56px;border-radius:14px;background:#4f46e5;color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;}
+.student-login-card h1{text-align:center;font-size:22px;margin-bottom:6px;}
+.student-login-card .sub{text-align:center;color:#64748b;font-size:14px;margin-bottom:28px;}
+.student-app{display:none;min-height:100vh;background:#f8fafc;}
+.student-app.active{display:block;}
+.s-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid #e2e8f0;padding:0 24px;height:60px;display:flex;align-items:center;justify-content:space-between;}
+.s-header .brand{display:flex;align-items:center;gap:10px;font-weight:700;font-size:16px;}
+.s-header .brand .logo{width:32px;height:32px;border-radius:8px;background:#4f46e5;color:#fff;display:flex;align-items:center;justify-content:center;}
+.s-layout{display:grid;grid-template-columns:220px 1fr;min-height:calc(100vh - 60px);}
+.s-sidebar{background:#fff;border-right:1px solid #e2e8f0;padding:16px 0;}
+.s-sidebar .nav-item{display:flex;align-items:center;gap:10px;padding:10px 20px;font-size:14px;font-weight:500;color:#334155;cursor:pointer;border-left:3px solid transparent;}
+.s-sidebar .nav-item:hover{background:#f1f5f9;}
+.s-sidebar .nav-item.active{background:#eef2ff;color:#4f46e5;border-left-color:#4f46e5;}
+.s-sidebar .section-title{padding:16px 20px 6px;font-size:11px;font-weight:600;text-transform:uppercase;color:#94a3b8;}
+.s-main{padding:28px;max-width:1100px;margin:0 auto;}
+.s-cover{background:linear-gradient(135deg,#4f46e5,#7c3aed);border-radius:16px;padding:28px;color:#fff;margin-bottom:24px;display:flex;align-items:center;gap:20px;}
+.s-cover .avatar{width:64px;height:64px;border-radius:50%;background:rgba(255,255,255,.2);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:700;border:3px solid rgba(255,255,255,.3);}
+.s-cover h2{font-size:20px;margin-bottom:4px;}
+.s-cover p{opacity:.85;font-size:13px;}
+.s-cover .badges{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap;}
+.s-cover .badge{background:rgba(255,255,255,.2);padding:3px 10px;border-radius:20px;font-size:11px;font-weight:500;}
+.s-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:14px;margin-bottom:24px;}
+.s-stat{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:18px;}
+.s-stat .label{font-size:11px;color:#64748b;margin-bottom:6px;text-transform:uppercase;font-weight:600;}
+.s-stat .value{font-size:26px;font-weight:700;line-height:1;}
+.s-stat .meta{font-size:11px;color:#94a3b8;margin-top:4px;}
+.s-card{background:#fff;border:1px solid #e2e8f0;border-radius:12px;padding:22px;margin-bottom:18px;}
+.s-card h3{font-size:15px;margin-bottom:14px;font-weight:600;}
+.ca-row{display:flex;align-items:center;gap:10px;padding:8px 0;border-bottom:1px solid #f1f5f9;font-size:13px;}
+.ca-row:last-child{border-bottom:none;}
+.ca-row .code{font-weight:600;min-width:75px;}
+.ca-row .bar{flex:1;height:7px;background:#e2e8f0;border-radius:4px;overflow:hidden;}
+.ca-row .bar .fill{height:100%;border-radius:4px;}
+.ca-row .pct{min-width:42px;text-align:right;font-weight:600;font-size:12px;}
+.res-row{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:10px;padding:10px 0;border-bottom:1px solid #f1f5f9;font-size:13px;align-items:center;}
+.res-row.h{font-weight:600;font-size:11px;text-transform:uppercase;color:#94a3b8;}
+.grade{font-weight:700;padding:2px 10px;border-radius:10px;text-align:center;font-size:11px;display:inline-block;}
+.ga{background:#dcfce7;color:#166534;} .gb{background:#dbeafe;color:#1e40af;}
+.gc{background:#fef3c7;color:#92400e;} .gd{background:#fed7aa;color:#9a3412;}
+.gf{background:#fecaca;color:#991b1b;}
+.ann-item{padding:12px 0;border-bottom:1px solid #f1f5f9;}
+.ann-item:last-child{border:none;}
+.ann-item .t{font-weight:600;font-size:13px;margin-bottom:2px;}
+.ann-item .m{font-size:11px;color:#94a3b8;}
+.tl{position:relative;padding-left:24px;}
+.tl::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:#e2e8f0;}
+.tl .i{position:relative;padding-bottom:16px;}
+.tl .i::before{content:'';position:absolute;left:-20px;top:3px;width:8px;height:8px;border-radius:50%;background:#4f46e5;border:2px solid #fff;}
+.tl .i .tm{font-size:10px;color:#94a3b8;}
+.tl .i .tx{font-size:12px;}
+.s-logout{color:#ef4444;cursor:pointer;font-size:13px;font-weight:500;}
+@media(max-width:768px){.s-layout{grid-template-columns:1fr;}.s-sidebar{display:none;}.s-cover{flex-direction:column;text-align:center;}.s-grid{grid-template-columns:repeat(2,1fr);}.res-row{grid-template-columns:1fr;font-size:12px;gap:3px;}.res-row.h{display:none;}}
+</style>
+</head>
+<body>
+<div class="student-wrap" id="loginRoot">
+  <div class="student-login-card">
+    <div class="logo" id="lI"></div>
+    <h1>Meridian Student Portal</h1>
+    <p class="sub">Sign in to view your academic records, results, and attendance.</p>
+    <div class="field"><label>Student ID <span class="req">*</span></label>
+      <input id="loginId" class="input" placeholder="e.g. STU-10231" autocomplete="username"></div>
+    <div class="field"><label>Password <span class="req">*</span></label>
+      <input id="loginPass" class="input" type="password" placeholder="••••••••" autocomplete="current-password"></div>
+    <div class="risk-note" style="margin:0 0 16px"><span id="lN"></span></div>
+    <button class="btn btn-primary" id="loginBtn" style="width:100%">Sign in to Portal</button>
+    <a class="btn-link btn-sm" href="index.html" style="margin-top:16px;width:100%;justify-content:center">← Back to Faculty Portal</a>
+  </div>
+</div>
+
+<div class="student-app" id="studentApp">
+  <header class="s-header">
+    <div class="brand"><div class="logo" id="nL"></div><span>Meridian Student</span></div>
+    <div class="actions"><span id="hN" style="font-size:13px;font-weight:500;"></span><span class="s-logout" id="sLo">Sign out</span></div>
+  </header>
+  <div class="s-layout">
+    <aside class="s-sidebar" id="sSide"></aside>
+    <main class="s-main" id="sMain"></main>
+  </div>
+</div>
+
+<div id="toast-root" class="toast-root" aria-live="polite"></div>
+<script src="js/api.js?v=20260915"></script>
+<script src="js/data.js?v=20260915"></script>
+<script src="js/charts.js?v=20260915"></script>
+<script src="js/ui.js?v=20260915"></script>
+<script src="js/student.js?v=20260915"></script>
+</body>
+</html>

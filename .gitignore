@@ -1,0 +1,38 @@
+# ─────────────────────────────────────────────────────────
+#  Meridian — git ignores
+# ─────────────────────────────────────────────────────────
+
+# ── Secrets — NEVER commit these ─────────────────────────
+backend/credentials.json
+*.pem
+*.key
+.env
+.env.*
+
+# ── Node.js ──────────────────────────────────────────────
+backend/node_modules/
+package-lock.json
+npm-debug.log*
+
+# ── Local database artefacts (generated at runtime) ──────
+backend/data/
+*.xlsx
+~$*.xlsx
+
+# ── Python ───────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ── Dev / test scratch files (local only) ────────────────
+_selftest.html
+_selftest.*.txt
+_runtest.ps1
+
+# ── OS / editor ──────────────────────────────────────────
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.idea/

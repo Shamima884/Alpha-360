@@ -1,0 +1,16 @@
+{
+  "name": "meridian-backend",
+  "version": "2.0.0",
+  "description": "Node.js + Express backend with Google Sheets database for Meridian platform",
+  "main": "server.js",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "googleapis": "^126.0.1"
+  }
+}
