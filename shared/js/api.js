@@ -17,7 +17,7 @@
 
 const API = {
   cfg: {
-    mode: 'google',                            /* 'local' | 'node' | 'google' */
+        mode: 'local',                            /* 'local' | 'node' | 'google' */
     base: 'http://localhost:3000/api',         /* node backend base URL */
     googleUrl: 'https://script.google.com/macros/s/AKfycbwMbpf57jcZsDBbY6F2fdii-o09RLQhn88k-lWBDDqP0vLpan234KdFsxdV7lN0-GU/exec',
     timeout: 8000

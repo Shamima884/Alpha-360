@@ -25,8 +25,8 @@ function adCourses(){let c=DATA.readA('courses',null);if(!c){c=DATA.courses.map(
 function adAnnounce(){let a=DATA.readA('announcements',null);if(!a){a=(DATA.admin?DATA.admin.announcements:[]).map(x=>({...x}));DATA.writeA('announcements',a);}return a;}
 
 /* ---------- Boot ---------- */
-window.addEventListener('DOMContentLoaded',async()=>{
-  await API.init();          /* connects to Node/Excel backend when enabled */
+window.addEventListener('DOMContentLoaded',()=>{
+  API.init();                /* background snapshot; renders from DATA seed immediately (non-blocking) */
   wireDropdowns();
   if(DATA.session()){enterApp();}else{renderLogin();}
   window.addEventListener('hashchange',()=>{ if(!DATA.session())return; adminRoute(); });

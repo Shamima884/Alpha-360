@@ -28,14 +28,20 @@ shared/
 
 ## How panels reference these files
 
-Each panel sits one level below the root, so relative paths look like:
+- **student** and **faculty** sit one level below the root and use relative paths:
+  ```html
+  <link rel="stylesheet" href="../shared/css/styles.css">
+  <script src="../shared/js/api.js?v=20260915"></script>
+  ```
+  Their own script stays local, e.g. `./js/student.js`.
 
-```html
-<link rel="stylesheet" href="../shared/css/styles.css">
-<script src="../shared/js/api.js?v=20260915"></script>
-```
-
-The panel's own script stays local, e.g. `./js/student.js`.
+- **admin** is served by `admin_server.py` at the repository root (`/`), so it
+  references shared assets and its own script with **root-absolute** paths that
+  work whether the page is loaded at `/` or `/admin/`:
+  ```html
+  <link rel="stylesheet" href="/shared/css/styles.css">
+  <script src="/admin/js/admin.js?v=20260915"></script>
+  ```
 
 ## Cache-busting
 

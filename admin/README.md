@@ -9,16 +9,18 @@ admin/
 └─ js/admin.js    all panel logic (login, sidebar, views, CRUD)
 ```
 
-Everything else it needs lives in `../shared/`:
+Everything else it needs lives in `/shared/`:
 
 ```
-../shared/css/styles.css   design system
-../shared/css/admin.css    admin styles + login card
-../shared/js/api.js        data adapter (local | node | google)
-../shared/js/data.js       sample data / seed
-../shared/js/charts.js     inline-SVG charts
-../shared/js/ui.js         icons, toasts, modals, helper widgets
+/shared/css/styles.css      design system
+/shared/css/admin.css       admin styles + login card
+/shared/js/api.js           data adapter (local | node | google)
+/shared/js/data.js          sample data / seed
+/shared/js/charts.js        inline-SVG charts
+/shared/js/ui.js            icons, toasts, modals, helper widgets
 ```
+
+Its own script is `/admin/js/admin.js`.
 
 > `shared/js/ui.js` powers the "Separate Admin Panel" button seen in the
 > faculty portal, so the two stay linked.
