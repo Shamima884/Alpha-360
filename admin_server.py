@@ -5,13 +5,14 @@
 
  Serves *only* the administrator control panel:
 
-     admin.html
-     css/styles.css   css/admin.css
-     js/api.js  js/data.js  js/charts.js  js/ui.js  js/admin.js
+     admin/index.html
+     admin/js/admin.js
+     shared/css/styles.css   shared/css/admin.css
+     shared/js/api.js  shared/js/data.js  shared/js/charts.js  shared/js/ui.js
 
- Everything else — index.html (faculty portal), student.html (student
- portal) and their scripts (js/student.js, js/pages-*.js) — returns 404,
- so this deployment exposes the admin panel and nothing else.
+ Everything else — the faculty portal (faculty/), the student portal
+ (student/) and their scripts — returns 404, so this deployment exposes
+ the admin panel and nothing else.
 
  Pure Python standard library: no dependencies, no build step.
 
@@ -43,17 +44,17 @@ SERVICE_NAME = "meridian-admin"
 # ── the ONLY paths this deployment exposes ──────────────────────────────
 # (query strings such as ?v=20260915 are ignored when matching)
 ALLOWED = {
-    "": "admin.html",
-    "/": "admin.html",
-    "/admin": "admin.html",
-    "/admin.html": "admin.html",
-    "/css/styles.css": "css/styles.css",
-    "/css/admin.css": "css/admin.css",
-    "/js/api.js": "js/api.js",
-    "/js/data.js": "js/data.js",
-    "/js/charts.js": "js/charts.js",
-    "/js/ui.js": "js/ui.js",
-    "/js/admin.js": "js/admin.js",
+    "": "admin/index.html",
+    "/": "admin/index.html",
+    "/admin": "admin/index.html",
+    "/admin/index.html": "admin/index.html",
+    "/admin/js/admin.js": "admin/js/admin.js",
+    "/shared/css/styles.css": "shared/css/styles.css",
+    "/shared/css/admin.css": "shared/css/admin.css",
+    "/shared/js/api.js": "shared/js/api.js",
+    "/shared/js/data.js": "shared/js/data.js",
+    "/shared/js/charts.js": "shared/js/charts.js",
+    "/shared/js/ui.js": "shared/js/ui.js",
 }
 
 MIME = {
@@ -68,7 +69,7 @@ MIME = {
 
 # Pages are never cached (so a redeploy is picked up immediately);
 # versioned assets (?v=…) may be cached briefly.
-NO_CACHE_PATHS = {"", "/", "/admin", "/admin.html"}
+NO_CACHE_PATHS = {"", "/", "/admin", "/admin/index.html"}
 
 ADMIN_USER = os.environ.get("ADMIN_USER", "").strip()
 ADMIN_PASS = os.environ.get("ADMIN_PASS", "")
@@ -92,7 +93,7 @@ NOT_FOUND_HTML = """<!DOCTYPE html>
 <h1>404 — page not deployed</h1>
 <p>This deployment hosts <strong>only the Meridian Admin Panel</strong>.
 The faculty and student portals are not available here.</p>
-<p><code>index.html</code> and <code>student.html</code> are intentionally not served.</p>
+<p><code>faculty/</code> and <code>student/</code> are intentionally not served by this deployment.</p>
 <a href="/">Go to the Admin Panel</a>
 </div></body></html>
 """
@@ -197,9 +198,9 @@ def main():
     print("  URL              http://0.0.0.0:%d" % PORT)
     print("  Access control   %s" % ("ON  (HTTP Basic Auth)" if AUTH_ON
                                      else "OFF - set ADMIN_USER + ADMIN_PASS"))
-    print("  Serving          admin.html - css/styles.css - css/admin.css")
-    print("                   js/api.js - js/data.js - js/charts.js - js/ui.js - js/admin.js")
-    print("  Not served       index.html - student.html - js/student.js - js/pages-*.js")
+    print("  Serving          admin/index.html - admin/js/admin.js")
+    print("                   shared/css/{styles,admin}.css - shared/js/{api,data,charts,ui}.js")
+    print("  Not served       faculty/ - student/ - backend/ - admin_server.py")
     print("-" * 62, flush=True)
     try:
         httpd.serve_forever()

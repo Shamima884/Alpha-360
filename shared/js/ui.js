@@ -227,7 +227,7 @@ function renderShell(){
       ${navBtn({id:'admin',label:'Admin Console',icon:'shield'})}
     </div>
     <div class="side-foot">
-      <button class="nav-item" onclick="window.open('admin.html')">${icon('building')}<span>Separate Admin Panel</span></button>
+      <button class="nav-item" onclick="window.open('../admin/index.html')">${icon('building')}<span>Separate Admin Panel</span></button>
       <button class="nav-item" onclick="toast('Help center opens the faculty knowledge base','info')">${icon('help')}<span>Help & Support</span></button>
       <button class="side-user" onclick="location.hash='#/settings'">
         ${avatar('Sarah Mitchell',34)}
@@ -252,7 +252,7 @@ function renderShell(){
         <button class="tb-user" data-dd='<div class="dd-menu"><div class="dd-head"><div class="dh-name">${esc(DATA.institution.facultyName)}</div><div class="dh-mail">s.mitchell@meridian.edu</div></div>
           <button class="dd-item" onclick="location.hash=&quot;#/settings&quot;;closeDD()">${icon('user',15)}My profile</button>
           <button class="dd-item" onclick="location.hash=&quot;#/admin&quot;;closeDD()">${icon('shield',15)}Admin Console</button>
-          <button class="dd-item" onclick="window.open('admin.html');closeDD()">${icon('building',15)}Separate Admin Panel ↗</button>
+          <button class="dd-item" onclick="window.open('../admin/index.html');closeDD()">${icon('building',15)}Separate Admin Panel ↗</button>
           <button class="dd-item" onclick="toggleTheme()">${icon('moon',15)}Toggle theme</button>
           <div class="dd-sep"></div>
           <button class="dd-item danger" onclick="toast(&#39;Signed out (demo)&#39;,&#39;info&#39;);closeDD()">${icon('logout',15)}Log out</button></div>'>

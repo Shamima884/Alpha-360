@@ -1,0 +1,11 @@
+﻿chromeExit = 0
+domBytes = 52379
+rendered contains "sidebar" = True
+rendered contains "topbar" = True
+rendered contains "nav-item" = True
+rendered contains "Sarah Mitchell" = True
+rendered contains "Meridian" = True
+rendered contains "main" = True
+navItems = 21
+no JS crash text = True
+title = Meridian University Â· Faculty 360

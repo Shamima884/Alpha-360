@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light"><head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Meridian University · Faculty 360</title>
+<meta name="description" content="Student 360° Academic Intelligence Dashboard for faculty">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared/css/styles.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<aside id="sidebar" class="sidebar" aria-label="Primary navigation">
+    <div class="brand"><span class="brand-logo"><svg class="ic" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 9-10-5L2 9l10 5 10-5z"></path><path d="M6 11.5V16c0 1.5 2.7 3 6 3s6-1.5 6-3v-4.5"></path></svg></span>
+      <div><div class="brand-name">Meridian University</div><div class="brand-sub">Faculty Portal</div></div></div>
+    <div class="side-scroll">
+      <div class="side-label">Main</div>
+      <button class="nav-item active" data-nav="dashboard" onclick="location.hash='#/dashboard'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"></rect></svg>
+    <span>Dashboard</span></button><button class="nav-item" data-nav="students" onclick="location.hash='#/students'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle><path d="M21 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+    <span>Students</span></button><button class="nav-item" data-nav="attendance" onclick="location.hash='#/attendance'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 2.5h6V6H9z"></path><path d="m9 13 2 2 4-4.5"></path></svg>
+    <span>Attendance</span></button><button class="nav-item" data-nav="academics" onclick="location.hash='#/academics'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg>
+    <span>Academics</span></button><button class="nav-item" data-nav="exams" onclick="location.hash='#/exams'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M16 13H8"></path><path d="M16 17H8"></path></svg>
+    <span>Examinations</span></button><button class="nav-item" data-nav="assignments" onclick="location.hash='#/assignments'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 2.5h6V6H9z"></path><path d="M9 11h6"></path><path d="M9 15h4"></path></svg>
+    <span>Assignments</span></button><button class="nav-item" data-nav="analytics" onclick="location.hash='#/analytics'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"></path><path d="M7 17v-5"></path><path d="M12 17V7"></path><path d="M17 17v-8"></path></svg>
+    <span>Analytics</span></button>
+      <div class="side-label">Monitor</div>
+      <button class="nav-item" data-nav="alerts" onclick="location.hash='#/alerts'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>
+    <span>Alerts</span><span class="nav-badge">9</span></button><button class="nav-item" data-nav="reports" onclick="location.hash='#/reports'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="M8 16v-3"></path><path d="M12 16v-5"></path><path d="M16 16v-2"></path></svg>
+    <span>Reports</span></button><button class="nav-item" data-nav="notifications" onclick="location.hash='#/notifications'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg>
+    <span>Notifications</span><span class="nav-badge">3</span></button><button class="nav-item" data-nav="wellbeing" onclick="location.hash='#/wellbeing'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 14c1.6-1.6 2-3.2 2-4.5A4.5 4.5 0 0 0 12 6.7 4.5 4.5 0 0 0 3 9.5c0 1.3.4 2.9 2 4.5l7 7z"></path></svg>
+    <span>Student Wellbeing</span></button>
+      <div class="side-label">System</div>
+      <button class="nav-item" data-nav="settings" onclick="location.hash='#/settings'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M12 2v3"></path><path d="M12 19v3"></path><path d="M4.2 4.2l2.1 2.1"></path><path d="M17.7 17.7l2.1 2.1"></path><path d="M2 12h3"></path><path d="M19 12h3"></path><path d="M4.2 19.8l2.1-2.1"></path><path d="M17.7 6.3l2.1-2.1"></path></svg>
+    <span>Settings</span></button>
+      <div class="side-label">Administration</div>
+      <button class="nav-item" data-nav="admin" onclick="location.hash='#/admin'"><svg class="ic" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-3 8-10V5l-8-3-8 3v7c0 7 8 10 8 10z"></path></svg>
+    <span>Admin Console</span></button>
+    </div>
+    <div class="side-foot">
+      <button class="nav-item" onclick="window.open('../admin/index.html')"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M9 7h1"></path><path d="M14 7h1"></path><path d="M9 11h1"></path><path d="M14 11h1"></path><path d="M10 21v-4h4v4"></path></svg><span>Separate Admin Panel</span></button>
+      <button class="nav-item" onclick="toast('Help center opens the faculty knowledge base','info')"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.4-3 4"></path><path d="M12 17.2h.01"></path></svg><span>Help &amp; Support</span></button>
+      <button class="side-user" onclick="location.hash='#/settings'">
+        <span class="avatar av-5" style="width:34px;height:34px;font-size:12px" aria-hidden="true">SM</span>
+        <span style="flex:1;min-width:0"><span style="display:block;font-weight:600;font-size:13px">Dr. Sarah Mitchell</span>
+        <span style="display:block;font-size:11px;color:var(--text-3)">CSE Department</span></span>
+      </button>
+      <button class="nav-item" onclick="toast('Signed out (demo) — refresh to return','info')"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg><span>Log out</span></button>
+    </div></aside>
+<div id="scrim" class="scrim" hidden=""></div>
+<div class="shell">
+  <header id="topbar" class="topbar">
+    <button class="icon-btn" id="menuBtn" aria-label="Open navigation" style="display: inline-grid;"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg></button>
+    <div class="tb-search"><svg class="ic" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      <input id="tbq" type="search" placeholder="Search student, ID, course…" aria-label="Global search" autocomplete="off">
+      <span class="tb-kbd">Ctrl K</span>
+      <div id="tbqPop"></div></div>
+    <div class="tb-spacer"></div>
+    <div class="tb-actions">
+      <button class="icon-btn" id="themeBtn" onclick="toggleTheme()" aria-label="Toggle dark mode" data-tip="Switch to dark mode"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg></button>
+      <button class="icon-btn" onclick="toast('Help center opens the faculty knowledge base','info')" aria-label="Help" data-tip="Help"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M9.1 9a3 3 0 0 1 5.8 1c0 2-3 2.4-3 4"></path><path d="M12 17.2h.01"></path></svg></button>
+      <button class="icon-btn" onclick="location.hash='#/notifications'" aria-label="Notifications" data-tip="Notifications"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg><span class="pip"></span></button>
+      <span class="tb-divider"></span>
+      <div class="dd">
+        <button class="tb-user" data-dd="&lt;div class=&quot;dd-menu&quot;&gt;&lt;div class=&quot;dd-head&quot;&gt;&lt;div class=&quot;dh-name&quot;&gt;Dr. Sarah Mitchell&lt;/div&gt;&lt;div class=&quot;dh-mail&quot;&gt;s.mitchell@meridian.edu&lt;/div&gt;&lt;/div&gt;
+          &lt;button class=&quot;dd-item&quot; onclick=&quot;location.hash=&quot;#/settings&quot;;closeDD()&quot;&gt;&lt;svg class=&quot;ic&quot; width=&quot;15&quot; height=&quot;15&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2&quot;/&gt;&lt;circle cx=&quot;12&quot; cy=&quot;7&quot; r=&quot;4&quot;/&gt;&lt;/svg&gt;My profile&lt;/button&gt;
+          &lt;button class=&quot;dd-item&quot; onclick=&quot;location.hash=&quot;#/admin&quot;;closeDD()&quot;&gt;&lt;svg class=&quot;ic&quot; width=&quot;15&quot; height=&quot;15&quot; viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot;
+    stroke=&quot;currentColor&quot; stroke-width=&quot;2&quot; stroke-linecap=&quot;round&quot; stroke-linejoin=&quot;round&quot;
+    aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M12 22s8-3 8-10V5l-8-3-8 3v7c0 7 8 10 8 10z&quot;/&gt;&lt;/svg&gt;Admin Console&lt;/button&gt;
+          &lt;button class=&quot;dd-item&quot; onclick=&quot;window.open(" ..="" admin="" index.html');closedd()"=""><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="1"></rect><path d="M9 7h1"></path><path d="M14 7h1"></path><path d="M9 11h1"></path><path d="M14 11h1"></path><path d="M10 21v-4h4v4"></path></svg>Separate Admin Panel ↗</button>
+          <button class="dd-item" onclick="toggleTheme()"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8z"></path></svg>Toggle theme</button>
+          <div class="dd-sep"></div>
+          <button class="dd-item danger" onclick="toast('Signed out (demo)','info');closeDD()"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg>Log out</button></div>'&gt;
+          <span class="avatar av-5" style="width:32px;height:32px;font-size:12px" aria-hidden="true">SM</span>
+          <span><span class="tb-user-name">Dr. Sarah Mitchell</span>
+          <span class="tb-user-meta" style="display:block">Professor · CSE</span></span>
+          <svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"></path></svg>
+      </div>
+    </header>
+  <main id="main" class="main" tabindex="-1">
+  <div class="page-head"><div class="ph-text"><h1>Good morning, Professor</h1><p class="page-sub">Here’s what’s happening with your students today.</p></div>
+    <div class="ph-actions"><select id="dashRange" class="select" style="width:auto" aria-label="Date range">
+      <option>This week</option><option selected="">This month</option><option>This semester</option><option>Academic year</option></select>
+     <button class="btn btn-ghost" onclick="toast('Dashboard snapshot exported as PDF','info')"><svg class="ic" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path><path d="M12 15V3"></path></svg>Export</button></div></div>
+  
+  <div class="grid cols-6" style="margin-bottom:20px"><div class="card card-hov kpi">
+    <div class="kpi-top"><span class="icon-tile t-primary"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle><path d="M21 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></span>
+      <span class="kpi-label">Total Students</span><span class="spark"><svg viewBox="0 0 88 30" width="88" height="30" aria-hidden="true">
+      <polyline points="3.0,27.0 19.4,19.0 35.8,15.0 52.2,12.3 68.6,8.3 85.0,3.0" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".9"></polyline></svg></span></div>
+    <div class="kpi-val">248</div>
+    <div class="kpi-desc">Across 5 departments</div>
+    <span class="kpi-trend tr-good"><svg class="ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg>4.2% from last semester</span></div><div class="card card-hov kpi">
+    <div class="kpi-top"><span class="icon-tile t-success"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span>
+      <span class="kpi-label">Average Attendance</span><span class="spark"><svg viewBox="0 0 88 30" width="88" height="30" aria-hidden="true">
+      <polyline points="3.0,27.0 19.4,21.4 35.8,15.7 52.2,6.5 68.6,11.5 85.0,3.0" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".9"></polyline></svg></span></div>
+    <div class="kpi-val">82.4%</div>
+    <div class="kpi-desc">Required threshold 75%</div>
+    <span class="kpi-trend tr-good"><svg class="ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg>1.6% from last semester</span></div><div class="card card-hov kpi">
+    <div class="kpi-top"><span class="icon-tile t-accent"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m9 14.5-1.5 6L12 17.7l4.5 2.8-1.5-6"></path></svg></span>
+      <span class="kpi-label">Average CGPA</span><span class="spark"><svg viewBox="0 0 88 30" width="88" height="30" aria-hidden="true">
+      <polyline points="3.0,27.0 19.4,22.8 35.8,19.7 52.2,13.4 68.6,16.6 85.0,3.0" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".9"></polyline></svg></span></div>
+    <div class="kpi-val">3.21</div>
+    <div class="kpi-desc">Scale of 4.00</div>
+    <span class="kpi-trend tr-good"><svg class="ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg>4.8% from previous semester</span></div><div class="card card-hov kpi">
+    <div class="kpi-top"><span class="icon-tile t-danger"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></span>
+      <span class="kpi-label">At Risk</span><span class="spark"><svg viewBox="0 0 88 30" width="88" height="30" aria-hidden="true">
+      <polyline points="3.0,27.0 19.4,21.7 35.8,19.0 52.2,13.7 68.6,11.0 85.0,3.0" fill="none" stroke="#dc2626" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".9"></polyline></svg></span></div>
+    <div class="kpi-val">18</div>
+    <div class="kpi-desc">Requires early intervention</div>
+    <span class="kpi-trend tr-bad"><svg class="ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg>3 new this week</span></div><div class="card card-hov kpi">
+    <div class="kpi-top"><span class="icon-tile t-warn"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><path d="M14 2v6h6"></path><path d="m9.5 12.5 5 5"></path><path d="m14.5 12.5-5 5"></path></svg></span>
+      <span class="kpi-label">Failed Courses</span><span class="spark"><svg viewBox="0 0 88 30" width="88" height="30" aria-hidden="true">
+      <polyline points="3.0,3.0 19.4,6.4 35.8,11.6 52.2,16.7 68.6,21.9 85.0,27.0" fill="none" stroke="#b45309" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".9"></polyline></svg></span></div>
+    <div class="kpi-val">24</div>
+    <div class="kpi-desc">This academic session</div>
+    <span class="kpi-trend tr-good"><svg class="ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg>12.5% from last semester</span></div><div class="card card-hov kpi">
+    <div class="kpi-top"><span class="icon-tile t-info"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span>
+      <span class="kpi-label">Pending Reviews</span><span class="spark"><svg viewBox="0 0 88 30" width="88" height="30" aria-hidden="true">
+      <polyline points="3.0,27.0 19.4,21.0 35.8,21.0 52.2,15.0 68.6,15.0 85.0,3.0" fill="none" stroke="#1d4ed8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" opacity=".9"></polyline></svg></span></div>
+    <div class="kpi-val">7</div>
+    <div class="kpi-desc">Results &amp; observations</div>
+    <span class="kpi-trend tr-bad"><svg class="ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m3 17 6-6 4 4 8-8"></path><path d="M14 7h7v7"></path></svg>2 added today</span></div></div>
+  <div class="grid-12">
+    <div class="card c8">
+      <div class="card-h"><span class="icon-tile t-danger"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg></span>
+        <div><h2>Students Requiring Attention</h2><span class="ch-sub">Flagged by early-warning rules · 6 shown</span></div>
+        <div class="right"><a class="btn-link btn-sm" href="#/students" onclick="App.studentFilters.risk='High';App.studentFilters.page=1">View all</a></div></div>
+      <div class="tbl-wrap"><table class="tbl" style="min-width:760px">
+        <thead><tr><th>Student</th><th>Department</th><th>Attendance</th><th>CGPA</th><th>Risk</th><th>Reasons</th><th></th></tr></thead>
+        <tbody>
+          <tr class="tr-click" onclick="location.hash='#/profile/STU-10231'">
+            <td><div style="display:flex;align-items:center;gap:11px"><span class="avatar av-2" style="width:34px;height:34px;font-size:12px" aria-hidden="true">RA</span>
+              <div><div class="cell-main">Rahim Ahmed</div><div class="cell-sub">STU-10231</div></div></div></td>
+            <td><span class="cell-sub">Computer Science &amp; Engineering</span></td>
+            <td><span class="prog"><span class="prog-track"><span class="prog-fill" style="width:68%;background:var(--danger)"></span></span><span class="prog-val">68%</span></span></td>
+            <td class="num" style="color:var(--danger)">2.41</td>
+            <td><span class="badge b-danger"><i class="dot"></i><svg class="ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>High</span></td>
+            <td><div style="display:flex;gap:4px;flex-wrap:wrap;max-width:190px"><span class="chip">Low attendance</span><span class="chip">2 failed courses</span><span class="chip">GPA below 2.5</span></div></td>
+            <td class="act-cell"><button class="btn btn-soft btn-sm" onclick="event.stopPropagation();location.hash='#/profile/STU-10231'">View Profile</button></td>
+          </tr>
+          <tr class="tr-click" onclick="location.hash='#/profile/STU-10248'">
+            <td><div style="display:flex;align-items:center;gap:11px"><span class="avatar av-5" style="width:34px;height:34px;font-size:12px" aria-hidden="true">OF</span>
+              <div><div class="cell-main">Omar Farouk</div><div class="cell-sub">STU-10248</div></div></div></td>
+            <td><span class="cell-sub">Computer Science &amp; Engineering</span></td>
+            <td><span class="prog"><span class="prog-track"><span class="prog-fill" style="width:69%;background:var(--danger)"></span></span><span class="prog-val">69%</span></span></td>
+            <td class="num" style="color:inherit">2.63</td>
+            <td><span class="badge b-danger"><i class="dot"></i><svg class="ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>High</span></td>
+            <td><div style="display:flex;gap:4px;flex-wrap:wrap;max-width:190px"><span class="chip">Low attendance</span><span class="chip">1 failed course</span></div></td>
+            <td class="act-cell"><button class="btn btn-soft btn-sm" onclick="event.stopPropagation();location.hash='#/profile/STU-10248'">View Profile</button></td>
+          </tr>
+          <tr class="tr-click" onclick="location.hash='#/profile/STU-10255'">
+            <td><div style="display:flex;align-items:center;gap:11px"><span class="avatar av-5" style="width:34px;height:34px;font-size:12px" aria-hidden="true">JW</span>
+              <div><div class="cell-main">Jamal Williams</div><div class="cell-sub">STU-10255</div></div></div></td>
+            <td><span class="cell-sub">Electrical &amp; Electronic Engineering</span></td>
+            <td><span class="prog"><span class="prog-track"><span class="prog-fill" style="width:58%;background:var(--danger)"></span></span><span class="prog-val">58%</span></span></td>
+            <td class="num" style="color:var(--danger)">2.28</td>
+            <td><span class="badge b-danger"><i class="dot"></i><svg class="ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>Critical</span></td>
+            <td><div style="display:flex;gap:4px;flex-wrap:wrap;max-width:190px"><span class="chip">Low attendance</span><span class="chip">3 failed courses</span><span class="chip">GPA below 2.5</span></div></td>
+            <td class="act-cell"><button class="btn btn-soft btn-sm" onclick="event.stopPropagation();location.hash='#/profile/STU-10255'">View Profile</button></td>
+          </tr>
+          <tr class="tr-click" onclick="location.hash='#/profile/STU-10274'">
+            <td><div style="display:flex;align-items:center;gap:11px"><span class="avatar av-5" style="width:34px;height:34px;font-size:12px" aria-hidden="true">TH</span>
+              <div><div class="cell-main">Tomas Herrera</div><div class="cell-sub">STU-10274</div></div></div></td>
+            <td><span class="cell-sub">Civil Engineering</span></td>
+            <td><span class="prog"><span class="prog-track"><span class="prog-fill" style="width:66%;background:var(--danger)"></span></span><span class="prog-val">66%</span></span></td>
+            <td class="num" style="color:var(--danger)">2.45</td>
+            <td><span class="badge b-danger"><i class="dot"></i><svg class="ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>High</span></td>
+            <td><div style="display:flex;gap:4px;flex-wrap:wrap;max-width:190px"><span class="chip">Low attendance</span><span class="chip">2 failed courses</span><span class="chip">GPA below 2.5</span></div></td>
+            <td class="act-cell"><button class="btn btn-soft btn-sm" onclick="event.stopPropagation();location.hash='#/profile/STU-10274'">View Profile</button></td>
+          </tr>
+          <tr class="tr-click" onclick="location.hash='#/profile/STU-10296'">
+            <td><div style="display:flex;align-items:center;gap:11px"><span class="avatar av-4" style="width:34px;height:34px;font-size:12px" aria-hidden="true">YK</span>
+              <div><div class="cell-main">Yusuf Karim</div><div class="cell-sub">STU-10296</div></div></div></td>
+            <td><span class="cell-sub">Business Administration</span></td>
+            <td><span class="prog"><span class="prog-track"><span class="prog-fill" style="width:62%;background:var(--danger)"></span></span><span class="prog-val">62%</span></span></td>
+            <td class="num" style="color:var(--danger)">2.35</td>
+            <td><span class="badge b-danger"><i class="dot"></i><svg class="ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>High</span></td>
+            <td><div style="display:flex;gap:4px;flex-wrap:wrap;max-width:190px"><span class="chip">Low attendance</span><span class="chip">2 failed courses</span><span class="chip">GPA below 2.5</span></div></td>
+            <td class="act-cell"><button class="btn btn-soft btn-sm" onclick="event.stopPropagation();location.hash='#/profile/STU-10296'">View Profile</button></td>
+          </tr>
+          <tr class="tr-click" onclick="location.hash='#/profile/STU-10308'">
+            <td><div style="display:flex;align-items:center;gap:11px"><span class="avatar av-1" style="width:34px;height:34px;font-size:12px" aria-hidden="true">NI</span>
+              <div><div class="cell-main">Nadia Islam</div><div class="cell-sub">STU-10308</div></div></div></td>
+            <td><span class="cell-sub">Computer Science &amp; Engineering</span></td>
+            <td><span class="prog"><span class="prog-track"><span class="prog-fill" style="width:68%;background:var(--danger)"></span></span><span class="prog-val">68%</span></span></td>
+            <td class="num" style="color:inherit">2.58</td>
+            <td><span class="badge b-danger"><i class="dot"></i><svg class="ic" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg>High</span></td>
+            <td><div style="display:flex;gap:4px;flex-wrap:wrap;max-width:190px"><span class="chip">Low attendance</span><span class="chip">1 failed course</span></div></td>
+            <td class="act-cell"><button class="btn btn-soft btn-sm" onclick="event.stopPropagation();location.hash='#/profile/STU-10308'">View Profile</button></td>
+          </tr></tbody></table></div>
+    </div>
+    <div class="card c4">
+      <div class="card-h"><span class="icon-tile t-primary"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg></span><h2>Recent Activity</h2></div>
+      <div class="card-b"><div class="timeline">
+        <div class="tl-item t-success"><div class="tl-time">09:42 AM</div>
+          <div class="tl-title">Result added for CSE101</div><div class="tl-desc">Final examination results published — 55 students</div></div>
+        <div class="tl-item "><div class="tl-time">09:15 AM</div>
+          <div class="tl-title">Attendance marked for CSE205</div><div class="tl-desc">Section A · 44 present · 3 late · 1 absent</div></div>
+        <div class="tl-item "><div class="tl-time">08:50 AM</div>
+          <div class="tl-title">12 submissions received</div><div class="tl-desc">CSE205 · Graph Traversal Report</div></div>
+        <div class="tl-item t-warn"><div class="tl-time">Yesterday</div>
+          <div class="tl-title">3 students flagged</div><div class="tl-desc">Attendance warning — below 70% threshold</div></div>
+        <div class="tl-item "><div class="tl-time">Yesterday</div>
+          <div class="tl-title">Faculty observation added</div><div class="tl-desc">Rahim Ahmed — engaged well in group activity</div></div>
+        <div class="tl-item t-success"><div class="tl-time">Yesterday</div>
+          <div class="tl-title">Midterm results approved</div><div class="tl-desc">MAT201 · published to student portal</div></div>
+        <div class="tl-item t-info"><div class="tl-time">Mon</div>
+          <div class="tl-title">Support follow-up scheduled</div><div class="tl-desc">Jamal Williams · counseling session, Thu 2:00 PM</div></div>
+        <div class="tl-item t-success"><div class="tl-time">Mon</div>
+          <div class="tl-title">Dean’s List published</div><div class="tl-desc">14 students from your departments qualified</div></div></div></div>
+    </div>
+    <div class="card c8">
+      <div class="card-h"><span class="icon-tile t-accent"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18"></path><path d="M7 17v-5"></path><path d="M12 17V7"></path><path d="M17 17v-8"></path></svg></span>
+        <div><h2>Academic Performance</h2><span class="ch-sub">Cohort average across 6 semesters</span></div>
+        <div class="right"><div class="seg" id="perfSeg" role="tablist" aria-label="Metric">
+          <button data-mode="gpa" class="on">GPA</button>
+          <button data-mode="attendance" class="">Attendance</button>
+          <button data-mode="pass" class="">Pass Rate</button></div></div></div>
+      <div class="card-b"><svg viewBox="0 0 680 270" width="100%" height="270" role="img" aria-label="Line chart: Average GPA"><line x1="40" x2="98%" y1="240" y2="240" class="ch-grid"></line>
+            <text x="34" y="243.5" text-anchor="end" class="ch-lab">2.9</text><line x1="40" x2="98%" y1="184" y2="184" class="ch-grid"></line>
+            <text x="34" y="187.5" text-anchor="end" class="ch-lab">3</text><line x1="40" x2="98%" y1="128" y2="128" class="ch-grid"></line>
+            <text x="34" y="131.5" text-anchor="end" class="ch-lab">3.1</text><line x1="40" x2="98%" y1="72" y2="72" class="ch-grid"></line>
+            <text x="34" y="75.5" text-anchor="end" class="ch-lab">3.2</text><line x1="40" x2="98%" y1="16" y2="16" class="ch-grid"></line>
+            <text x="34" y="19.5" text-anchor="end" class="ch-lab">3.3</text><text x="44" y="262" text-anchor="middle" class="ch-lab">Sem 1</text><text x="168.4" y="262" text-anchor="middle" class="ch-lab">Sem 2</text><text x="292.8" y="262" text-anchor="middle" class="ch-lab">Sem 3</text><text x="417.2" y="262" text-anchor="middle" class="ch-lab">Sem 4</text><text x="541.6" y="262" text-anchor="middle" class="ch-lab">Sem 5</text><text x="666" y="262" text-anchor="middle" class="ch-lab">Sem 6</text><defs><linearGradient id="clnruac" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#1d4ed8" stop-opacity=".22"></stop>
+          <stop offset="1" stop-color="#1d4ed8" stop-opacity="0"></stop></linearGradient></defs>
+          <path d="M44.0,210.4 L168.4,181.7 L292.8,160.2 L417.2,117.3 L541.6,138.7 L666.0,45.6 L666,240 L44,240 Z" fill="url(#clnruac)" stroke="none"></path><polyline points="44.0,210.4 168.4,181.7 292.8,160.2 417.2,117.3 541.6,138.7 666.0,45.6" fill="none" stroke="#1d4ed8" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></polyline><circle cx="44.0" cy="210.4" r="4" fill="var(--surface)" stroke="#1d4ed8" stroke-width="2" class="ch-dot">
+               <title>Average GPA · Sem 1: 3</title></circle><circle cx="168.4" cy="181.7" r="4" fill="var(--surface)" stroke="#1d4ed8" stroke-width="2" class="ch-dot">
+               <title>Average GPA · Sem 2: 3</title></circle><circle cx="292.8" cy="160.2" r="4" fill="var(--surface)" stroke="#1d4ed8" stroke-width="2" class="ch-dot">
+               <title>Average GPA · Sem 3: 3.1</title></circle><circle cx="417.2" cy="117.3" r="4" fill="var(--surface)" stroke="#1d4ed8" stroke-width="2" class="ch-dot">
+               <title>Average GPA · Sem 4: 3.1</title></circle><circle cx="541.6" cy="138.7" r="4" fill="var(--surface)" stroke="#1d4ed8" stroke-width="2" class="ch-dot">
+               <title>Average GPA · Sem 5: 3.1</title></circle><circle cx="666.0" cy="45.6" r="4" fill="var(--surface)" stroke="#1d4ed8" stroke-width="2" class="ch-dot">
+               <title>Average GPA · Sem 6: 3.2</title></circle></svg></div>
+    </div>
+    <div class="card c4">
+      <div class="card-h"><span class="icon-tile t-success"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"></path></svg></span><h2>Attendance Overview</h2></div>
+      <div class="card-b" style="text-align:center">
+        <div class="donut-wrap"><svg viewBox="0 0 172 172" width="172" height="172" role="img" aria-label="Donut chart"><circle cx="86" cy="86" r="75" fill="none" stroke="var(--success)" stroke-width="22" stroke-dasharray="388.30 471.24" stroke-dashoffset="0.00" transform="rotate(-90 86 86)" class="ch-seg ">
+        <title>Present: 82.4 (82%)</title></circle><circle cx="86" cy="86" r="75" fill="none" stroke="var(--danger)" stroke-width="22" stroke-dasharray="42.88 471.24" stroke-dashoffset="-388.30" transform="rotate(-90 86 86)" class="ch-seg ">
+        <title>Absent: 9.1 (9%)</title></circle><circle cx="86" cy="86" r="75" fill="none" stroke="var(--warn)" stroke-width="22" stroke-dasharray="24.98 471.24" stroke-dashoffset="-431.18" transform="rotate(-90 86 86)" class="ch-seg ">
+        <title>Late: 5.3 (5%)</title></circle><circle cx="86" cy="86" r="75" fill="none" stroke="var(--info)" stroke-width="22" stroke-dasharray="15.08 471.24" stroke-dashoffset="-456.16" transform="rotate(-90 86 86)" class="ch-seg ">
+        <title>Excused: 3.2 (3%)</title></circle></svg>
+      <div class="donut-center"><strong>82.4%</strong><span>Average</span></div></div>
+        <div class="legend"><span class="lg-item">
+      <i style="background:var(--success)"></i>Present<b>82.4%</b></span><span class="lg-item">
+      <i style="background:var(--danger)"></i>Absent<b>9.1%</b></span><span class="lg-item">
+      <i style="background:var(--warn)"></i>Late<b>5.3%</b></span><span class="lg-item">
+      <i style="background:var(--info)"></i>Excused<b>3.2%</b></span></div>
+        <div style="display:flex;gap:10px;margin-top:18px;text-align:left">
+          <div class="stat-chip" style="flex:1"><span class="sc-val">82.4%</span><span class="sc-lab"><i class="sc-dot" style="background:var(--success)"></i>Average attendance</span></div>
+          <div class="stat-chip" style="flex:1"><span class="sc-val" style="color:var(--danger)">23</span><span class="sc-lab"><i class="sc-dot" style="background:var(--danger)"></i>Below threshold</span></div></div>
+        <a class="btn btn-ghost btn-sm" style="margin-top:14px;width:100%" href="#/attendance">Open attendance workspace <svg class="ic" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 6 6 6-6 6"></path></svg></a>
+      </div>
+    </div>
+    <div class="card c4">
+      <div class="card-h"><span class="icon-tile t-warn"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><circle cx="12" cy="12" r="5"></circle><circle cx="12" cy="12" r="1"></circle></svg></span>
+        <div><h2>Student Risk Distribution</h2><span class="ch-sub">Click a segment to filter students</span></div></div>
+      <div class="card-b" style="text-align:center">
+        <div class="donut-wrap"><svg viewBox="0 0 172 172" width="172" height="172" role="img" aria-label="Donut chart"><circle cx="86" cy="86" r="75" fill="none" stroke="var(--success)" stroke-width="22" stroke-dasharray="300.22 471.24" stroke-dashoffset="0.00" transform="rotate(-90 86 86)" class="ch-seg ch-click" data-label="Low Risk" tabindex="0" role="button" aria-label="Filter by Low Risk">
+        <title>Low Risk: 158 (64%)</title></circle><circle cx="86" cy="86" r="75" fill="none" stroke="var(--warn)" stroke-width="22" stroke-dasharray="136.81 471.24" stroke-dashoffset="-300.22" transform="rotate(-90 86 86)" class="ch-seg ch-click" data-label="Moderate Risk" tabindex="0" role="button" aria-label="Filter by Moderate Risk">
+        <title>Moderate Risk: 72 (29%)</title></circle><circle cx="86" cy="86" r="75" fill="none" stroke="var(--danger)" stroke-width="22" stroke-dasharray="22.80 471.24" stroke-dashoffset="-437.04" transform="rotate(-90 86 86)" class="ch-seg ch-click" data-label="High Risk" tabindex="0" role="button" aria-label="Filter by High Risk">
+        <title>High Risk: 12 (5%)</title></circle><circle cx="86" cy="86" r="75" fill="none" stroke="var(--accent)" stroke-width="22" stroke-dasharray="11.40 471.24" stroke-dashoffset="-459.84" transform="rotate(-90 86 86)" class="ch-seg ch-click" data-label="Critical" tabindex="0" role="button" aria-label="Filter by Critical">
+        <title>Critical: 6 (2%)</title></circle></svg>
+      <div class="donut-center"><strong>248</strong><span>Students</span></div></div>
+        <div class="legend"><span class="lg-item">
+      <i style="background:var(--success)"></i>Low Risk<b>158</b></span><span class="lg-item">
+      <i style="background:var(--warn)"></i>Moderate Risk<b>72</b></span><span class="lg-item">
+      <i style="background:var(--danger)"></i>High Risk<b>12</b></span><span class="lg-item">
+      <i style="background:var(--accent)"></i>Critical<b>6</b></span></div>
+      </div>
+    </div>
+    <div class="card c4">
+      <div class="card-h"><span class="icon-tile t-accent"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="6"></circle><path d="m9 14.5-1.5 6L12 17.7l4.5 2.8-1.5-6"></path></svg></span>
+        <div><h2>Top Performers</h2><span class="ch-sub">Highest CGPA this semester</span></div></div>
+      <div class="card-b" style="display:grid;gap:4px;padding:10px 12px">
+        
+          <div class="notif-row" style="cursor:pointer;border-radius:10px;border-bottom:1px solid var(--border)" onclick="location.hash='#/profile/STU-10232'">
+            <span class="cell-sub num" style="width:18px">1</span><span class="avatar av-0" style="width:34px;height:34px;font-size:12px" aria-hidden="true">AR</span>
+            <div class="n-body"><div class="n-title">Ayesha Rahman</div><div class="n-desc">STU-10232 · Computer Science &amp; Engineering</div></div>
+            <span class="badge b-primary">3.78</span></div>
+          <div class="notif-row" style="cursor:pointer;border-radius:10px;border-bottom:1px solid var(--border)" onclick="location.hash='#/profile/STU-10299'">
+            <span class="cell-sub num" style="width:18px">2</span><span class="avatar av-3" style="width:34px;height:34px;font-size:12px" aria-hidden="true">HS</span>
+            <div class="n-body"><div class="n-title">Hana Suzuki</div><div class="n-desc">STU-10299 · Electrical &amp; Electronic Engineering</div></div>
+            <span class="badge b-primary">3.71</span></div>
+          <div class="notif-row" style="cursor:pointer;border-radius:10px;border-bottom:1px solid var(--border)" onclick="location.hash='#/profile/STU-10252'">
+            <span class="cell-sub num" style="width:18px">3</span><span class="avatar av-5" style="width:34px;height:34px;font-size:12px" aria-hidden="true">PS</span>
+            <div class="n-body"><div class="n-title">Priya Sharma</div><div class="n-desc">STU-10252 · Computer Science &amp; Engineering</div></div>
+            <span class="badge b-primary">3.65</span></div>
+          <div class="notif-row" style="cursor:pointer;border-radius:10px;border-bottom:1px solid var(--border)" onclick="location.hash='#/profile/STU-10284'">
+            <span class="cell-sub num" style="width:18px">4</span><span class="avatar av-1" style="width:34px;height:34px;font-size:12px" aria-hidden="true">CW</span>
+            <div class="n-body"><div class="n-title">Chen Wei</div><div class="n-desc">STU-10284 · Computer Science &amp; Engineering</div></div>
+            <span class="badge b-primary">3.58</span></div>
+          <div class="notif-row" style="cursor:pointer;border-radius:10px;border-bottom:1px solid var(--border)" onclick="location.hash='#/profile/STU-10258'">
+            <span class="cell-sub num" style="width:18px">5</span><span class="avatar av-2" style="width:34px;height:34px;font-size:12px" aria-hidden="true">FA</span>
+            <div class="n-body"><div class="n-title">Fatima Al-Sayed</div><div class="n-desc">STU-10258 · Business Administration</div></div>
+            <span class="badge b-primary">3.51</span></div>
+      </div>
+    </div>
+    <div class="card c4">
+      <div class="card-h"><span class="icon-tile t-info"><svg class="ic" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5z"></path></svg></span>
+        <div><h2>Pending Reviews</h2><span class="ch-sub">7 items await your action</span></div></div>
+      <div class="card-b" style="display:grid;gap:12px">
+        
+          <div style="display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--border);border-radius:12px">
+            <div style="flex:1;min-width:0"><div class="cell-main" style="font-size:13px">Final results — CSE101</div>
+              <div class="cell-sub">55 grades to approve · 9:42 AM</div></div>
+            <button class="btn btn-soft btn-sm" onclick="toast('Review queue opened (demo)','info')">Review</button></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--border);border-radius:12px">
+            <div style="flex:1;min-width:0"><div class="cell-main" style="font-size:13px">Midterm results — EEE201</div>
+              <div class="cell-sub">44 grades to publish · Feb 20</div></div>
+            <button class="btn btn-soft btn-sm" onclick="toast('Review queue opened (demo)','info')">Review</button></div>
+          <div style="display:flex;align-items:center;gap:12px;padding:12px;border:1px solid var(--border);border-radius:12px">
+            <div style="flex:1;min-width:0"><div class="cell-main" style="font-size:13px">Observation approvals</div>
+              <div class="cell-sub">2 observations pending · Yesterday</div></div>
+            <button class="btn btn-soft btn-sm" onclick="toast('Review queue opened (demo)','info')">Review</button></div>
+      </div>
+    </div>
+  </div></main>
+  <footer class="foot">Meridian University · Faculty 360° Platform · Demo data · Fall Semester 2026</footer>
+</div>
+<nav id="bottomnav" class="bottomnav" aria-label="Mobile navigation"><button class="nav-item active" data-nav="dashboard" onclick="location.hash='#/dashboard'"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="3" width="7.5" height="7.5" rx="1.5"></rect><rect x="3" y="13.5" width="7.5" height="7.5" rx="1.5"></rect><rect x="13.5" y="13.5" width="7.5" height="7.5" rx="1.5"></rect></svg><span>Dashboard</span></button><button class="nav-item" data-nav="students" onclick="location.hash='#/students'"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="10" cy="7" r="4"></circle><path d="M21 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg><span>Students</span></button><button class="nav-item" data-nav="attendance" onclick="location.hash='#/attendance'"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="5" y="4" width="14" height="17" rx="2"></rect><path d="M9 2.5h6V6H9z"></path><path d="m9 13 2 2 4-4.5"></path></svg><span>Attendance</span></button><button class="nav-item" data-nav="alerts" onclick="location.hash='#/alerts'"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"></path><path d="M12 9v4"></path><path d="M12 17h.01"></path></svg><span>Alerts</span></button><button class="nav-item" onclick="toggleDrawer(true)"><svg class="ic" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="5" r="1.4" fill="currentColor" stroke="none"></circle><circle cx="12" cy="12" r="1.4" fill="currentColor" stroke="none"></circle><circle cx="12" cy="19" r="1.4" fill="currentColor" stroke="none"></circle></svg><span>More</span></button></nav>
+<div id="modal-root"></div>
+<div id="toast-root" class="toast-root" aria-live="polite"></div>
+<script src="../shared/js/api.js?v=20260915"></script>
+<script src="../shared/js/data.js?v=20260915"></script>
+<script src="../shared/js/charts.js?v=20260915"></script>
+<script src="../shared/js/ui.js?v=20260915"></script>
+<script src="./js/pages-a.js?v=20260915"></script>
+<script src="./js/pages-b.js?v=20260915"></script>
+<script src="./js/pages-c.js?v=20260915"></script>
+<script src="./js/pages-d.js?v=20260915"></script>
+
+
+</body></html>

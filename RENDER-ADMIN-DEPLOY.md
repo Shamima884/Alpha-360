@@ -5,14 +5,14 @@ The faculty portal (`index.html`) and student portal (`student.html`) are
 **not** served by this deployment — they return a branded 404.
 
 ```
-GET /                      → admin.html          ✅
-GET /admin   /admin.html   → admin.html          ✅
-GET /css/styles.css  /css/admin.css              ✅
-GET /js/api.js  data.js  charts.js  ui.js  admin.js  ✅
-GET /index.html  /student.html                   ❌ 404
-GET /js/student.js  /js/pages-a…d.js             ❌ 404
-GET /admin_server.py  /.gitignore  /.git/**      ❌ 404
-GET /healthz                                     ✅ JSON (public)
+GET /  /admin  /admin/index.html          → admin/index.html        ✅
+GET /admin/js/admin.js                    → admin panel script      ✅
+GET /shared/css/styles.css  .  admin.css  → shared stylesheets      ✅
+GET /shared/js/api.js  data.js  charts.js  ui.js → shared scripts   ✅
+GET /faculty/…   /student/…               → ❌ 404 (not deployed)
+GET /index.html  /student.html  /js/…  /css/… → ❌ 404 (old layout)
+GET /admin_server.py  /.gitignore  /.git/**   → ❌ 404
+GET /healthz                              → ✅ JSON (public)
 ```
 
 The server is `admin_server.py` (Python standard library only — **no
@@ -90,8 +90,8 @@ curl https://<your-service>.onrender.com/healthz
 curl -u admin:YOURPASS -I https://<your-service>.onrender.com/
 
 # these must all be 404 — proves only the admin panel is deployed
-curl -o /dev/null -w "%{http_code}\n" https://<your-service>.onrender.com/student.html
-curl -o /dev/null -w "%{http_code}\n" https://<your-service>.onrender.com/index.html
+curl -o /dev/null -w "%{http_code}\n" https://<your-service>.onrender.com/student/
+curl -o /dev/null -w "%{http_code}\n" https://<your-service>.onrender.com/faculty/
 ```
 
 In the browser: open the service URL → the **Meridian Admin** login card →
@@ -122,7 +122,7 @@ Use a different port: `PORT=9000 python admin_server.py`
 
 ## Notes & behaviour
 
-- **Data source.** `js/api.js` runs with `mode:'google'` and talks to the
+- **Data source.** `shared/js/api.js` runs with `mode:'google'` and talks to the
   Google Apps Script web app (`cfg.googleUrl`). If that endpoint is
   unreachable or returns an error, the panel automatically falls back to the
   embedded seed data in `js/data.js`, so the deployment always loads. Once
@@ -135,10 +135,10 @@ Use a different port: `PORT=9000 python admin_server.py`
   first request afterwards takes ~30–60 s to wake.
 - **Auto-deploy.** `autoDeploy: true` in `render.yaml` redeploys on every
   push to the connected branch.
-- **Not exposed on purpose.** `js/api.js` is served (the panel needs it),
-  but the source files `admin_server.py`, `.gitignore` and the student /
-  faculty pages are not reachable. Change `ALLOWED` in `admin_server.py`
-  if you later want to publish those pages too.
+- **Not exposed on purpose.** `admin/js/admin.js` and `shared/js/*` are
+  served (the panel needs them), but the source files `admin_server.py`,
+  `.gitignore` and the faculty / student panels are not reachable. Change
+  `ALLOWED` in `admin_server.py` if you later want to publish those too.
 - **Custom domain.** Render ▸ your service ▸ **Settings ▸ Custom Domains**.
 - **No secrets in the repo.** `backend/credentials.json` (Google service
   account key) is git-ignored and is *not* needed for this deployment —

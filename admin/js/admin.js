@@ -47,7 +47,7 @@ function renderLogin(){
       <input id="lgPass" class="input" type="password" placeholder="••••••••" autocomplete="current-password"></div>
     <div class="risk-note" style="margin:0 0 16px">${icon('info',15)}<span>Demo credentials — <b>admin@meridian.edu</b> / <b>admin123</b></span></div>
     <button class="btn btn-primary" id="lgBtn" style="width:100%">${icon('shield',15)}Sign in to Admin</button>
-    <a class="btn-link btn-sm" href="index.html" style="margin-top:16px;width:100%;justify-content:center">← Back to Faculty Portal</a>
+    <a class="btn-link btn-sm" href="../faculty/index.html" style="margin-top:16px;width:100%;justify-content:center">← Back to Faculty Portal</a>
   </div></div>`;
   const user=$('#lgUser'),pass=$('#lgPass'),btn=$('#lgBtn');
   const rm=el=>{const e=el.parentElement.querySelector('.err-msg');if(e)e.remove();el.classList.remove('error');};
@@ -93,7 +93,7 @@ function renderASide(sess){
       ${ATABS.map(t=>`<button class="nav-item" data-atab="${t[0]}" onclick="location.hash='#/${t[0]}'">${icon(t[2],17)}<span>${t[1]}</span></button>`).join('')}
     </div>
     <div class="side-foot">
-      <button class="nav-item" onclick="window.open('index.html')">${icon('book',17)}<span>Faculty Portal</span></button>
+      <button class="nav-item" onclick="window.open('../faculty/index.html')">${icon('book',17)}<span>Faculty Portal</span></button>
       <button class="side-user" onclick="location.hash='#/settings'">
         ${avatar(sess.user||'Admin',34)}
         <span style="flex:1;min-width:0"><span style="display:block;font-weight:600;font-size:13px">${esc(sess.user||'Administrator')}</span>
