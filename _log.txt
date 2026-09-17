@@ -1,3 +1,0 @@
-﻿c5d748f fix: admin panel login card renders under admin_server
-262e8e2 Reorganize into admin/ student/ faculty/ shared/ layout
-fb6f25f add Render deployment for admin panel only (admin_server.py + render.yaml + guide)
