@@ -29,6 +29,15 @@ venv/
 _selftest*
 _runtest.ps1
 _render*
+_facdeploys*
+_facsrv*
+_facultyui*
+_gitchk*
+_localsrv*
+_loctest*
+_port.txt
+_runlocalsrv*
+_dep*
 
 # ── OS / editor ──────────────────────────────────────────
 Thumbs.db
