@@ -45,3 +45,7 @@ desktop.ini
 .DS_Store
 .vscode/
 .idea/
+
+# ── Dev / test scratch files (local only) ────────────────
+_stu*
+
