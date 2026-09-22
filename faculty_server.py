@@ -39,6 +39,16 @@ from urllib.parse import unquote, urlparse
 
 BASE_DIR = Path(__file__).resolve().parent
 
+# Pages are never cached (so a redeploy is picked up immediately);
+# versioned assets (?v=…) may be cached briefly.
+NO_CACHE_PATHS = {"", "/", "/faculty", "/faculty/index.html"}
+
+FACULTY_USER = os.environ.get("FACULTY_USER", "").strip()
+FACULTY_PASS = os.environ.get("FACULTY_PASS", "")
+AUTH_ON = bool(FACULTY_USER and FACULTY_PASS)
+
+PORT = int(os.environ.get("PORT", "8080"))
+
 SERVICE_NAME = "meridian-faculty"
 
 # ── the ONLY paths this deployment exposes ──────────────────────────────
@@ -205,13 +215,3 @@ def main():
 if __name__ == "__main__":
     main()
 
-
-# Pages are never cached (so a redeploy is picked up immediately);
-# versioned assets (?v=…) may be cached briefly.
-NO_CACHE_PATHS = {"", "/", "/faculty", "/faculty/index.html"}
-
-FACULTY_USER = os.environ.get("FACULTY_USER", "").strip()
-FACULTY_PASS = os.environ.get("FACULTY_PASS", "")
-AUTH_ON = bool(FACULTY_USER and FACULTY_PASS)
-
-PORT = int(os.environ.get("PORT", "8080"))
